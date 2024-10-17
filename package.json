@@ -1,0 +1,23 @@
+{
+  "name": "mercadopagopix",
+  "version": "1.0.0",
+  "description": "Mercado pago pix",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "postinstall": "npm install"
+  },
+  "author": "Daniel Soares",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "mercadopago": "^2.0.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

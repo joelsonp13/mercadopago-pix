@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento PIX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md max-w-md w-full">
+        <h1 class="text-2xl font-bold mb-4 text-center text-blue-600">Pagamento PIX</h1>
+        <p class="mb-4 text-center">Produto: <%= nome %></p>
+        <p class="mb-6 text-center font-semibold">Valor: R$ <%= parseFloat(preco).toFixed(2) %></p>
+        
+        <% if (qrCodeBase64) { %>
+            <p class="mb-2 text-center">Escaneie o QR Code abaixo para realizar o pagamento:</p>
+            <img src="data:image/png;base64,<%= qrCodeBase64 %>" alt="QR Code PIX" class="mx-auto mb-4">
+        <% } else { %>
+            <p class="mb-4 text-center text-red-500">QR Code não disponível</p>
+        <% } %>
+        
+        <% if (qrCode) { %>
+            <p class="mb-2 text-center">Ou copie o código PIX:</p>
+            <textarea rows="4" class="w-full p-2 border rounded mb-4 text-sm" readonly><%= qrCode %></textarea>
+        <% } else { %>
+            <p class="mb-4 text-center text-red-500">Código PIX não disponível</p>
+        <% } %>
+    </div>
+</body>
+</html>
